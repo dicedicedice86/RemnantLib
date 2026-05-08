@@ -10,9 +10,11 @@ namespace RemnantLib
 
         // Called on server and client
         // Useful for registering block/entity classes on both sides
+        // It's Me
         public override void Start(ICoreAPI api)
         {
             Mod.Logger.Notification("Hello from template mod plus testy: " + api.Side);
+            Mod.Logger.Notification("It's Me" + api.Side);
         }
 
         public override void StartServerSide(ICoreServerAPI api)
