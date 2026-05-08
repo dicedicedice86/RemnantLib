@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="RemnantLib/RemnantLib/RemnantLib.csproj" />
+  <Project Path="RemnantLib/ZZCakeBuild/CakeBuild.csproj" />
+</Solution>
