@@ -19,12 +19,12 @@ namespace RemnantLib
 
         public override void StartServerSide(ICoreServerAPI api)
         {
-            Mod.Logger.Notification("Hello from template mod server side: " + Lang.Get("remnantlib:hello"));
+
         }
 
         public override void StartClientSide(ICoreClientAPI api)
         {
-            Mod.Logger.Notification("Hello from template mod client side: " + Lang.Get("remnantlib:hello"));
+
         }
 
     }
