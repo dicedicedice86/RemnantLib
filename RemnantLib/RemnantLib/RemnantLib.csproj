@@ -62,4 +62,9 @@
   </Content>
 </ItemGroup>
 
+<ItemGroup>
+  <Folder Include="code\interfaces\" />
+  <Folder Include="code\spells\" />
+</ItemGroup>
+
 </Project>

@@ -1,0 +1,18 @@
+{
+  "code": "debugwand",
+  "class": "remnantlib.debugwand",
+
+  "shape": {
+    "base": "game:item/stick"
+  },
+
+  "textures": {
+    "*": {
+      "base": "game:block/metal/copper"
+    }
+  },
+
+  "creativeinventory": {
+    "general": [ "debugwand" ]
+  }
+}
