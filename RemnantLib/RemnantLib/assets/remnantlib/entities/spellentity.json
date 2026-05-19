@@ -1,0 +1,37 @@
+{
+  "code": "spellentity",
+  "class": "remnantlib.spellentity",
+  "hitboxSize": {
+    "x": 0.125,
+    "y": 0.125
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "game:entity/nonliving/projectile/bullet" },
+    "size": 0.5,
+    "behaviors": [
+      { "code": "passivephysics" },
+      { "code": "interpolateposition" }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "passivephysics" },
+      {
+        "code": "despawn",
+        "minSeconds": 15
+      }
+    ]
+  },
+  "lightHsv": {
+    "base": [ 4, 4, 14 ]
+  },
+  "sounds": {
+  },
+  "attributes": {
+    "physics": {
+      "groundDragFactor": 1,
+      "airDragFactor": 0.25
+    }
+  }
+}

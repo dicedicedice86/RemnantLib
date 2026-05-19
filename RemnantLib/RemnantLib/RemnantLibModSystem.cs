@@ -1,4 +1,5 @@
-﻿using RemnantLib.code.items;
+﻿using RemnantLib.code;
+using RemnantLib.code.items;
 using RemnantLib.code.SpellComponents;
 using RemnantLib.code.systems;
 using Vintagestory.API.Client;
@@ -19,6 +20,7 @@ namespace RemnantLib
             RegisterSpellBehaviours(); //Register spell behaviours to registry
 
             api.RegisterItemClass(Mod.Info.ModID + ".debugwand", typeof(DebugWand));
+            api.RegisterEntity(Mod.Info.ModID + ".spellentity", typeof(SpellEntity));
         }
         void RegisterSpellBehaviours()
         {

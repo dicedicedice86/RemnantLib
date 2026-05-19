@@ -1,0 +1,12 @@
+Make a GetShapeBehaviour that takes in a string Shape parameter that simply takes in an argument like game:entities/arrow or smth
+Not sure how *exactly* I would get that to work because currently the spell behaviours currently just have non-return functions.
+
+I imagine you could do something like have the shape be assigned to the entity within the OnSpawn() function within the behaviour, which *could* work
+but I feel like it would be needlessly awkward
+
+I would like some generic behaviours that have return functions like GetShape or something like that. Or maybe a function within the ISpellbehaviour Interface
+that returns just object or a list of object, and then its kinda up to the behavior what they would like to return, and then its up to the mod system to decypher what
+exactly the return object is going to be
+
+this sounds like it could cause issues but it kinda isnt, for example if a mod system is trying to get a shape for a spell, then one would imagine that the "GetShapeBehaviour"
+class would return a shape object, and if you can't manage that then what are you even doing oomfie
