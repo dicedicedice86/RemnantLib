@@ -13,13 +13,9 @@ namespace RemnantLib.code.items
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
         {
             base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handling);
-            EntityPlayer player = byEntity as EntityPlayer;
+            if (byEntity == null) return;
+            EntityPlayer player = (EntityPlayer)byEntity;
             if (player == null) return;
-            Spell newspell = new Spell(); 
-
-            //Building of the spell will happen here somehow through any means
-
-            RemnantLibModSystem.SpellBuilder.BuildSpell(newspell, player); //Sending the spell off to the spell builder so it can handle all of the actual instancing logic, instancing shouldn't happen here
         }
     }
 }

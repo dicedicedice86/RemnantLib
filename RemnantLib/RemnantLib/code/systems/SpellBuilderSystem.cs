@@ -1,4 +1,5 @@
 ﻿using RemnantLib.code.abstracts;
+using RemnantLib.code.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,12 +16,22 @@ namespace RemnantLib.code.systems
 
     public class SpellBuilderSystem
     {
-
-        //Temporary function (MAKE SURE ITS ACTUALLY TEMPORARY I AM PERSONALLY GIVING THIS VERY FUNCTION A LIFETIME OF 7 DAYS)
-        public void BuildSpell(Spell spell, EntityPlayer firedBy)
+        public SpellRuntime Build(SpellDefinition definition)
         {
-            (firedBy.Api as ICoreServerAPI)?.BroadcastMessageToAllGroups($"Player {firedBy.Player.PlayerName} fired Spell {spell}", EnumChatType.Notification);
-            firedBy.Api.Logger.Notification($"Player {firedBy.Player.PlayerName} fired Spell {spell}", EnumChatType.Notification);
+            SpellRuntime runtime = new();
+
+            foreach (SpellBehaviorDefinition behaviorDef
+                in definition.Behaviors)
+            {
+                ISpellBehaviour behavior =
+                    SpellBehaviorRegistry.Create(
+                        behaviorDef
+                    );
+
+                runtime.Behaviors.Add(behavior);
+            }
+
+            return runtime;
         }
     }
 }
